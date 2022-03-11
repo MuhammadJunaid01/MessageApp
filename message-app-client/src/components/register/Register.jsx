@@ -67,11 +67,14 @@ const Register = () => {
           <Col xs={12} md={7} lg={7}>
             <div className="renderChat">
               {chat.map((chat, index) => (
-                <div key={index}>
-                  <p>{chat.message}</p>
-                  <p>{chat.id.slice(0, 20)}</p>
-                  <i>{chat.time}</i>
-                  <p>{chat.name}</p>
+                <div className="message_container " key={index}>
+                  <div className="message">
+                    <p>{chat.message}</p>
+                  </div>
+                  <div className="message_info">
+                    <p>From: {chat.name}</p>
+                    <i>{chat.time.slice(0, 16)}</i>
+                  </div>
                 </div>
               ))}
             </div>

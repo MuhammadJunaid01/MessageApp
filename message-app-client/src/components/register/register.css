@@ -63,7 +63,27 @@
   border: 2px solid gainsboro;
   overflow: scroll;
   height: 90vh;
+  padding: 15px;
 }
 .renderChat p {
   margin: 0;
+}
+.message_container {
+  background-color: gainsboro;
+  width: 33%;
+  margin-bottom: 5px;
+}
+.message {
+  width: 100%;
+  background-color: rgba(95, 158, 160, 0.473);
+  padding: 11px;
+  font-size: 17px;
+  border-top-right-radius: 10px;
+  border-end-start-radius: 10px;
+  margin-bottom: 5px;
+}
+.message_info {
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
 }

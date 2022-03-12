@@ -16,6 +16,9 @@ const Register = () => {
     socket.on("broadcast", ({ name, room, id, time }) => {
       setChat([...chat, { name: name, message: room, id: id, time: time }]);
     });
+    socket.on("user connected", (data) => {
+      console.log("users connected", data);
+    });
   }, [chat]);
 
   console.log("chat", chat);

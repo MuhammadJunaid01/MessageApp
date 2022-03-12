@@ -1,0 +1,45 @@
+.loginContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+.login_content {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #778899;
+  padding: 30px;
+  margin-top: 15vh;
+}
+.login_content h2 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+  color: white;
+}
+.login_input {
+  display: block;
+  width: 80%;
+  margin-bottom: 3px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.login_input::placeholder {
+  color: gainsboro;
+  font-size: 20px;
+}
+.submit_btn {
+  min-width: 22%;
+  border: none;
+  padding: 6px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-size: 19px;
+}

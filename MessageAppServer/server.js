@@ -17,6 +17,15 @@ const io = new Server(httpServer, {
   },
 });
 
+io.use((socket, next) => {
+  const username = socket.handshake.auth.username;
+  if (!username) {
+    return next(new Error("invalid username"));
+  }
+  socket.username = username;
+  next();
+});
+
 io.on("connection", (socket) => {
   const newId = uuidv4();
   console.log("a user connected", socket.id);
@@ -24,7 +33,18 @@ io.on("connection", (socket) => {
   //     console.log("user disconnected", socket.id);
   //   });
   //   //event handle
-
+  const users = [];
+  for (let [id, socket] of io.of("/").sockets) {
+    users.push({
+      userID: id,
+      username: socket.username,
+    });
+  }
+  socket.emit("users", users);
+  socket.broadcast.emit("user connected", {
+    userID: socket.id,
+    username: socket.username,
+  });
   socket.on("message", ({ name, room }) => {
     io.emit("broadcast", {
       name: name,
